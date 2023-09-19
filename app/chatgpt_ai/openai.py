@@ -7,17 +7,17 @@ load_dotenv()
 openai.api_key = os.getenv('OPENAI_KEY')
 
 def chatgpt_response(problem_title):
-    prompt=f"Generate the title, difficulty, description, test case, constraint, and link for the LeetCode problem: {problem_title}"
-    response = openai.Completion.create(
-        model='text-davinci-003',
-        prompt=prompt,
-        temperature=1,
-        max_tokens=200
+    prompt=f"Generate the title, difficulty, description, test case, constraint, and link for the LeetCode problem: {problem_title}" #Prompt to give details about selected problem
+    response = openai.Completion.create( #Generating AI response
+        model='text-davinci-003', #OpenAi text completion model
+        prompt=prompt, #Give it a prompt
+        temperature=1, #Randomness of the model
+        max_tokens=200 #Max token it can use for the generated response
     )
     return response.choices[0].text
 
 def approach_response(approach, problem_name):
-    prompt=f"Is this an optimal approach to solving the specific LeetCode problem {problem_name}: {approach}"
+    prompt=f"Is this an optimal approach to solving the specific LeetCode problem {problem_name}: {approach}" #Prompt to see if inputted approach is optimal
     response = openai.Completion.create(
         model='text-davinci-003',
         prompt=prompt,
@@ -27,7 +27,7 @@ def approach_response(approach, problem_name):
     return response.choices[0].text
 
 def help_response(problem_name):
-    prompt=f"Give me a hint on how to approach the LeetCode problem: {problem_name}"
+    prompt=f"Give me the optimal approach to the LeetCode problem: {problem_name}" #Prompt to give approach to problem when user is stuck
     response = openai.Completion.create(
         model='text-davinci-003',
         prompt=prompt,
