@@ -1,5 +1,5 @@
 # LeetCode Helper Discord Bot
-## [Currently not available to the public]
+## [For personal use only at the moment]
 
 ## High-speed study companion bot for mastering LeetCode's Blind 75. Built around strategic problem-solving approaches, this bot is designed to help you tackle LeetCode's Blind 75 questions, focusing on methods and techniques rather than specific code solutions.
 
