@@ -1,11 +1,12 @@
 from dotenv import load_dotenv
-import openai
+from openai import OpenAI
 import os
 
 load_dotenv()
 
 # Create the OpenAI client with the API key
-client = openai.OpenAI(api_key=os.getenv('OPENAI_KEY'))  # Load OpenAI API key
+
+client = OpenAI(api_key=os.getenv('OPENAI_KEY'))  # Load OpenAI API key
 
 def leetcode_response(problem_title):
     prompt = f"Generate the title, difficulty, description, test case, constraint, and LeetCode link for the generated LeetCode problem: {problem_title}"
